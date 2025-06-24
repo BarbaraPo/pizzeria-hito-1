@@ -1,0 +1,50 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+
+p,
+.gris,
+input[placeholder] {
+  color: black;
+  font-weight: 300;
+}
+
+
+.bg-green {
+  background-color: #e04545;
+}
+
+
+img {
+  width: 100px;
+  height: 250px;
+}
+
+.logo {
+  width: 80px;
+  height: 50px;
+}
+
+.botones {
+  background-color: #e04545;
+}
+
+footer {
+  background-color: #e04545;
+}
+
+.hero-container {
+  height: 300px;
+  overflow: hidden;
+}
+
+.hero-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-text {
+  z-index: 2;
+}
