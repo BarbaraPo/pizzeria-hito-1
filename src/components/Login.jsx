@@ -15,7 +15,7 @@ const Login = () => {
                 <input type="password" name="contraseña" />
             </div>
 
-            <button type="submit">Enviar</button>
+            <button type="submit">Registrarse</button>
 
         </form>
 
