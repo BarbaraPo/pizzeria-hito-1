@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Home />*/}
+      {/*<Home />*/}
       <Register/>
       <Login/>
       <Footer />

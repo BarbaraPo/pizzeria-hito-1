@@ -3,7 +3,7 @@
 const Navbar = () => {
 
     const total = 25000;
-    const token = true
+    const token = false
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark text-white bg-green">
@@ -15,7 +15,7 @@ const Navbar = () => {
                 </button>
                 {token ? (
                     <>
-                        <button>logout</button>
+                        <button >Logout</button>
                         <button>Profile</button>
 
                     </>

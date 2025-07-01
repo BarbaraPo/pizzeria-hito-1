@@ -22,8 +22,8 @@ img {
 }
 
 .logo {
-  width: 80px;
-  height: 50px;
+  width: 180px;
+  height: 90px;
 }
 
 .botones {
@@ -48,3 +48,48 @@ footer {
 .hero-text {
   z-index: 2;
 }
+
+/* formularios centrados */
+.formlogin, .formregister {
+  max-width: 400px;
+  margin: 80px auto; 
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Separacion*/
+.form-register, .form-login{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiquetas */
+.form-register label, .form-login label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Inputs */
+.form-register input, .form-login input {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Botones */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color:#e04545;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  
+}
+
