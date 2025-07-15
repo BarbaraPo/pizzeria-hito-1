@@ -2,9 +2,30 @@
 
 import CardPizza from './CardPizza'
 import header from '../assets/img/Header.jpg'
-import { pizzas } from '../pizzas.js'
+import { useState } from 'react';
+import { useEffect } from 'react';
+//import { pizzas } from '../pizzas.js'
 
 const Home = () => {
+
+  const [pizzas, setPizzas] = useState([])
+
+  const url = "http://localhost:5000/api/pizzas";
+
+  const getData = async () => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setPizzas(data);
+    } catch (error) {
+      console.error("error al obtener las pizzas", error)
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
 
   return (
     <div>
