@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -15,26 +16,57 @@ const Navbar = () => {
                 </button>
                 {token ? (
                     <>
-                        <button >Logout</button>
+                        <Link
+                            to="logout"
+                            className=""
+                        >
+                            <button >Logout</button>
+                        </Link>
                         <button>Profile</button>
 
                     </>
                 ) : (
 
                     <>
-                        <button>Register</button>
-                        <button>Login</button>
+                        <Link
+                            to="Register"
+                        >
+                            <button>Register</button>
+                        </Link>
 
+                        <Link
+                            to="Login"
+                        >
+                            <button>Login</button>
+                        </Link>
                     </>
                 )
                 }
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <div className="navbar-nav ms-auto ps-2">
-                        <button>Home</button>
-                        <a className="nav-item nav-link" href="#">Profile</a>
-                        <a className="nav-item nav-link" href="#">Pricing</a>
-                        <button>Total</button>
+                        <Link
+                            to="/"
+                        >
+                            <button>Home</button>
+                        </Link>
 
+                        <Link
+                            to="/Profile"
+                        >
+                            <button>Profile</button>
+                        </Link>
+
+                        <Link
+                            to="Pricing"
+                        >
+                            <button>Pricing</button>
+                        </Link>
+
+                        <Link
+                            to="/Cart"
+                        >
+                            <button>Total</button>
+                        </Link>
                     </div>
                 </div>
             </div>

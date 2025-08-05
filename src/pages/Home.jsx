@@ -1,6 +1,6 @@
 
 
-import CardPizza from './CardPizza'
+import CardPizza from '../components/CardPizza'
 import header from '../assets/img/Header.jpg'
 import { useState } from 'react';
 import { useEffect } from 'react';

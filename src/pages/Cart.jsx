@@ -2,8 +2,6 @@ import { useState } from "react";
 import { pizzaCart } from "../pizzas";
 import '../App.css'
 
-
-
 const Cart = () => {
 
     const [cart, setCart] = useState(pizzaCart)
@@ -37,8 +35,8 @@ const Cart = () => {
                        
                         <div className="item-details">
                             <h3> {pizza.name}</h3>
-                            <p>Precio{pizza.price}</p>
-                            <p>Cantidad {pizza.count}</p>
+                            <p>Precio: ${pizza.price}</p>
+                            <p>Cantidad: {pizza.count}</p>
                         </div>
 
                         <div className="quantity-controls">
