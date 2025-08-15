@@ -1,11 +1,14 @@
 
 import { Link } from "react-router-dom";
 
+import { useCart} from '../context/CartContext'
+
 const Navbar = () => {
 
-    const total = 25000;
-    const token = false
+    const {total} = useCart();
 
+    const token = false;
+    
     return (
         <nav className="navbar navbar-expand-lg navbar-dark text-white bg-green">
             <div className="container">
@@ -65,7 +68,7 @@ const Navbar = () => {
                         <Link
                             to="/Cart"
                         >
-                            <button>Total</button>
+                            <button>Total: ${total}</button>
                         </Link>
                     </div>
                 </div>

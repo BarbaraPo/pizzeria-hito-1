@@ -2,13 +2,13 @@
 
 import CardPizza from '../components/CardPizza'
 import header from '../assets/img/Header.jpg'
-import { useState } from 'react';
-import { useEffect } from 'react';
-//import { pizzas } from '../pizzas.js'
+/*import { useState } from 'react';*/
+//import { useEffect } from 'react';
+import { pizzas } from '../pizzas.js'
 
 const Home = () => {
 
-  const [pizzas, setPizzas] = useState([])
+  /*const [pizzas, setPizzas] = useState([])
 
   const url = "http://localhost:5000/api/pizzas";
 
@@ -24,7 +24,7 @@ const Home = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, []);*/
 
 
   return (
@@ -48,6 +48,7 @@ const Home = () => {
             {pizzas.map(pizza => (
               <CardPizza
                 key={pizza.id}
+                id={pizza.id}
                 name={pizza.name}
                 price={pizza.price}
                 ingredients={pizza.ingredients}

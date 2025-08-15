@@ -1,7 +1,12 @@
 
 import React from 'react'
+import { useCart } from '../context/CartContext'
 
-const CardPizza = ({ name, price, ingredients, img }) => {
+const CardPizza = ({id, name, price, ingredients, img }) => {
+     const {addToCart} = useCart();
+
+     const pizza = {id,name,price,img,ingredients};
+  
   return (
 
 
@@ -18,28 +23,13 @@ const CardPizza = ({ name, price, ingredients, img }) => {
 
           <ul className="list-group list-group-flush text-right">
             <li className="
-                    list-group-item
-                    ms-auto
-                    fw-light
-                    gris
-                    py-0
-                    pe-1
-                    2
-                    1
-                    5
-                    py-0
-                    pe-1
-                    2
-                    1
-                    5
-                  ">
-              {price}
-
+                    list-group-item ms-auto fw-light text-end text-muted">
+              ${price}
             </li>
           </ul>
           <div className='botones'>
             <button>Ver Más</button>
-            <button>Añadir </button>
+            <button onClick={() =>addToCart(pizza)}>Añadir </button>
           </div>
 
         </div>
@@ -48,4 +38,4 @@ const CardPizza = ({ name, price, ingredients, img }) => {
   )
 }
 
-export default CardPizza
+export default CardPizza;
