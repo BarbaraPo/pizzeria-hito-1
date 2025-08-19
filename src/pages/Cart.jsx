@@ -3,10 +3,12 @@
 import '../App.css'
 
 import { useCart } from '../context/CartContext';
+import { useUser } from '../context/UserContext';
 
 const Cart = () => {
 
     const {cart, updateQuantity, total} = useCart();
+    const { token } = useUser();
 
     return (
         <div className="cart-container">
@@ -30,13 +32,12 @@ const Cart = () => {
                             <button onClick={() => updateQuantity(pizza.id, "incrementar")}>+</button>
                         </div>
                     </li>
-                ) )
-                }
+                ) ) }
             </ul>
 
             <h4 className="cart-total"> Total: <strong> ${total}</strong> </h4>
 
-            <button className="pay-button"> Pagar </button>
+            <button className="pay-button" disabled={!token}> Pagar </button>
 
         </div>
     )
