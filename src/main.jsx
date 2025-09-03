@@ -8,19 +8,19 @@ import "./index.css"
 
 import React from "react";
 
-import  CartProvider from './context/CartContext.jsx';
-import  UserProvider from './context/UserContext.jsx'
+import CartProvider from './context/CartContext.jsx';
+import UserProvider from './context/UserContext.jsx'
 
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-    <UserProvider>
-    <CartProvider>
-        <App />
-    </CartProvider>
-    </UserProvider>
+      <UserProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 )

@@ -57,9 +57,10 @@ footer {
 
 /* formularios centrados */
 
-.formlogin, .formregister {
+.formlogin,
+.formregister {
   max-width: 400px;
-  margin: 80px auto; 
+  margin: 80px auto;
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -69,7 +70,8 @@ footer {
 
 /* Separacion*/
 
-.form-register, .form-login{
+.form-register,
+.form-login {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -77,14 +79,16 @@ footer {
 
 /* Etiquetas */
 
-.form-register label, .form-login label {
+.form-register label,
+.form-login label {
   margin-bottom: 8px;
   font-weight: bold;
 }
 
 /* Inputs */
 
-.form-register input, .form-login input {
+.form-register input,
+.form-login input {
   padding: 10px;
   border: 1px solid #aaa;
   border-radius: 5px;
@@ -96,12 +100,12 @@ footer {
 button[type="submit"] {
   width: 100%;
   padding: 12px;
-  background-color:#e04545;
+  background-color: #e04545;
   border: none;
   color: white;
   border-radius: 5px;
   font-size: 16px;
-  
+
 }
 
 /* cart*/

@@ -3,11 +3,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext'
 
-const CardPizza = ({id, name, price, ingredients, img }) => {
-     const {addToCart} = useCart();
+const CardPizza = ({ id, name, price, ingredients, img }) => {
+  const { addToCart } = useCart();
 
-     const pizza = {id,name,price,img,ingredients};
-  
+  const pizza = { id, name, price, img, ingredients };
+
   return (
 
 
@@ -29,10 +29,10 @@ const CardPizza = ({id, name, price, ingredients, img }) => {
             </li>
           </ul>
           <div className='botones'>
-          <Link to={`/pizza/${id}`}>
-            <button>Ver Más</button>
-          </Link>
-            <button onClick={() =>addToCart(pizza)}>Añadir </button>
+            <Link to={`/pizza/${id}`}>
+              <button>Ver Más</button>
+            </Link>
+            <button onClick={() => addToCart(pizza)}>Añadir </button>
           </div>
 
         </div>

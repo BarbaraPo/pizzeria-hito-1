@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { useParams } from "react-router-dom";
 
 const Pizza = () => {
-    const {id} = useParams();
+    const { id } = useParams();
     const [pizza, setPizza] = useState(null);
 
     useEffect(() => {

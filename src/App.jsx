@@ -15,32 +15,32 @@ import NotFound from './pages/NotFound'
 import { useUser } from "./context/UserContext"
 
 function App() {
-   const { token } = useUser();
+  const { token } = useUser();
 
   return (
     <>
       <Navbar />
       <Routes>
 
-        <Route path="/" element={<Home />}/>
-        
+        <Route path="/" element={<Home />} />
+
         <Route path="/cart" element={<Cart />} />
-        
+
         <Route path="/pizza/:id" element={<Pizza />} />
-        
-        
-        <Route path="/login" element={token ? <Navigate to="/" /> : <Login/>} />
-        
+
+
+        <Route path="/login" element={token ? <Navigate to="/" /> : <Login />} />
+
         <Route path="/register" element={token ? <Navigate to="/" /> : <Register />} />
-        
-       
+
+
         <Route path="/profile" element={token ? <Profile /> : <Navigate to="/login" />} />
-        
-       
+
+
         <Route path="/404" element={<NotFound />} />
-        
+
         <Route path="/*" element={<NotFound />} />
-      
+
       </Routes>
 
       {/*<Home/>*/}

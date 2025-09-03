@@ -1,18 +1,22 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useUser } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 
 const Register = () => {
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [password2, setPassword2] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [password2, setPassword2] = useState('');
+    const { register } = useUser();
+    const navigate = useNavigate();
 
-    const validarDatos = (e) => {
+    const validarDatos = async (e) => {
         e.preventDefault();
 
         if (!email.trim() || !password.trim() || !password2.trim()) {
             alert("Completar todos los datos por favor");
-            return
+            return;
         }
 
         if (password !== password2) {
@@ -24,12 +28,15 @@ const Register = () => {
             alert("La contraseña debe tener al menos 6 caracteres.");
             return;
         }
-        alert("Registro exitoso")
 
-        setEmail('');
-        setPassword('');
-        setPassword2('');
-    }
+        try {
+            await register(email, password);
+            alert("Registro exitoso");
+            navigate("/profile");
+        } catch {
+            alert("Error al registrarse");
+        }
+    };
 
     return (
 
@@ -39,30 +46,28 @@ const Register = () => {
                 <div className="form-register">
                     <label>Email</label>
                     <input type='email'
-                        name='email'
-                        onChange={(e) => setEmail(e.target.value)} value={email}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="form-register">
                     <label>Contraseña</label>
                     <input type="password"
-                        name="password"
-                        onChange={(e) => setPassword(e.target.value)} value={password}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
                 <div className="form-register">
                     <label>Confirmar Contraseña</label>
                     <input type="password"
-                        name="password2"
-                        onChange={(e) => setPassword2(e.target.value)} value={password2}
+                        value={password2}
+                        onChange={(e) => setPassword2(e.target.value)}
                     />
                 </div>
                 <button type="submit">Registrarse</button>
-
             </form>
         </>
-
-    )
-}
+    );
+};
 
 export default Register

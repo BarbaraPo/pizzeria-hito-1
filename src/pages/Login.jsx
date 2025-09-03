@@ -1,20 +1,25 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useUser } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const emailValido = "barbara@ejemplo.com";
-    const passwordValida = "comidarapida";
+    //const emailValido = "barbara@ejemplo.com";
+    //const passwordValida = "comidarapida";
+    const { login } = useUser();
+    const navigate = useNavigate();
 
 
-    const validarDatos = (e) => {
+    const validarDatos = async (e) => {
         e.preventDefault();
 
         if (!email.trim() || !password.trim()) {
             alert("Completar todos los datos por favor");
-            return
+            return;
         }
 
         if (password.length < 6) {
@@ -22,13 +27,14 @@ const Login = () => {
             return;
         }
 
-        if (email !== emailValido || password !== passwordValida) {
+        try {
+            await login(email, password);
+            // alert("inicio de sesion exitoso");
+            navigate("/profile");
+        } catch {
             alert("Email o contraseña incorrectos");
-            return;
         }
-
-        alert("Registro exitoso")
-    }
+    };
 
 
     return (
@@ -37,23 +43,21 @@ const Login = () => {
             <div className="form-login">
                 <label>Email</label>
                 <input type='email'
-                    name='email'
-                    onChange={(e) => setEmail(e.target.value)} value={email}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
             <div className="form-login">
-                <label>Contreseña</label>
+                <label>Contraseña</label>
                 <input type="password"
-                    name="password"
-                    onChange={(e) => setPassword(e.target.value)} value={password}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
 
             <button type="submit">Ingresar</button>
-
         </form>
-
     )
 }
 
-export default Login
+export default Login;

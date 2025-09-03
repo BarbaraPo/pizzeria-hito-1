@@ -5,6 +5,7 @@ import { useCart } from '../context/CartContext'
 
 import { useUser } from "../context/UserContext";
 
+
 const Navbar = () => {
 
     const { total } = useCart();
@@ -21,23 +22,23 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
+                <Link to="/">Inicio</Link>
+
                 {token ? (
                     <>
-                        <Link to="/profile">
-                            <button>Profile</button>
-                        </Link>
-
-                        <button onClick={logout}>Logout</button>
+                        <Link to="/profile">Perfil</Link>
+                        <button onClick={logout}>Cerrar Sesión</button>
                     </>
                 ) : (
 
                     <>
-                        <Link to="Register">
-                            <button>Register</button>
-                        </Link>
 
                         <Link to="Login">
                             <button>Login</button>
+                        </Link>
+
+                        <Link to="Register">
+                            <button>Register</button>
                         </Link>
                     </>
                 )
